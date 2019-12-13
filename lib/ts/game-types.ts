@@ -29,12 +29,38 @@ declare interface Ctx {
 
 declare interface GameConfiguration {
     name: string
-    setup: Function
-    phases: Object
-    moves: Object
+    setup: (ctx: Ctx, setupData?: any) => GType
+    phases: {
+        [key: string]: GamePhase
+    }
+    moves: {
+        [key: string]: Move
+    }
+    playerView?: (G: GType, ctx: Ctx, playerID: string) => GType | null
+    seed?: string
+    turn?: {
+        order?: string
+        onBegin?: (G: GType, ctx: Ctx) => GType | null
+        onEnd?: (G: GType, ctx: Ctx) => GType | null
+        endIf?: (G: GType, ctx: Ctx) => boolean | null
+        onMove?: (G: GType, ctx: Ctx) => GType | null
+        moveLimit?: number
+        stages?: {
+            [key: string]: GameStage
+        }
+    }
 }
 
+declare interface GamePhase {}
+
 declare interface GameSettings {}
+
+declare interface GameStage {
+    moves?: {
+        [key: string]: Move
+    }
+    next?: string
+}
 
 declare interface GType {}
 
