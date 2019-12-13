@@ -36,7 +36,10 @@ export default {
     /*
      ** Plugins to load before mounting the App
      */
-    plugins: ['~/plugins/global-components'],
+    plugins: [
+        { src: '~/plugins/browser', mode: 'client' },
+        '~/plugins/global-components'
+    ],
 
     /*
      ** Nuxt.js modules
@@ -54,6 +57,7 @@ export default {
      ** Build configuration
      */
     build: {
+        transpile: ['boardgame-utils'],
         /*
          ** You can extend webpack config here
          */

@@ -1,12 +1,26 @@
 {
-  "name": "boardgame-boilerplate",
-  "version": "1.0.0",
-  "description": "Boilerplate for a new Nuxt project, including:",
-  "main": "nuxt.config.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "boardgame-boilerplate",
+    "version": "1.0.0",
+    "description": "Boilerplate for a new Nuxt project, including:",
+    "main": "nuxt.config.js",
+    "scripts": {
+        "dev": "concurrently \"nuxt\" \"tsc -w\"",
+        "build": "tsc && nuxt build",
+        "start": "tsc && nuxt start",
+        "generate": "tsc && nuxt generate"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "directories": {
+        "lib": "lib"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/safrmo/boardgame-boilerplate.git"
+    },
+    "bugs": {
+        "url": "https://github.com/safrmo/boardgame-boilerplate/issues"
+    },
+    "homepage": "https://github.com/safrmo/boardgame-boilerplate#readme"
 }
