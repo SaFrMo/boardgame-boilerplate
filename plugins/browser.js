@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { plugin as boardgamePlugin } from 'boardgame-utils'
-import options from '~/lib/built'
-import constants from '~/lib/built/constants'
+import { options } from '~/lib/built'
+import { constants } from '~/lib/built/constants'
 
 export default ({ app: { store } }) => {
     Vue.use(boardgamePlugin, {

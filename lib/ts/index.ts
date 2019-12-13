@@ -13,9 +13,9 @@ const game: GameConfiguration = {
     phases: {}
 }
 
-const config: { game: GameConfiguration; ai: AiConfig } = {
+const options: { game: GameConfiguration; ai: AiConfig } = {
     game,
     ai
 }
 
-export { config, game }
+export { options, game }
