@@ -7,9 +7,9 @@ declare class BotClass {
     seed: string
     iterationCounter: number
     private _opts: object
-    addOpt: (options: { key: string; range: any; initial: any }) => null
+    addOpt: (options: { key: string; range: any; initial: any }) => void
     getOpt: (key: string) => any
-    setOpt: (key: string, value: any) => null
+    setOpt: (key: string, value: any) => void
     opts: () => object
     enumerate: (G: GType, ctx: Ctx, playerId: string) => any
     random: (arg?: Array<any> | number) => any
@@ -36,14 +36,14 @@ declare interface GameConfiguration {
     moves: {
         [key: string]: Move
     }
-    playerView?: (G: GType, ctx: Ctx, playerID: string) => GType | null
+    playerView?: (G: GType, ctx: Ctx, playerID: string) => GType | void
     seed?: string
     turn?: {
         order?: string
-        onBegin?: (G: GType, ctx: Ctx) => GType | null
-        onEnd?: (G: GType, ctx: Ctx) => GType | null
-        endIf?: (G: GType, ctx: Ctx) => boolean | null
-        onMove?: (G: GType, ctx: Ctx) => GType | null
+        onBegin?: (G: GType, ctx: Ctx) => GType | void
+        onEnd?: (G: GType, ctx: Ctx) => GType | void
+        endIf?: (G: GType, ctx: Ctx) => boolean | void
+        onMove?: (G: GType, ctx: Ctx) => GType | void
         moveLimit?: number
         stages?: {
             [key: string]: GameStage
