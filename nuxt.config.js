@@ -38,6 +38,7 @@ export default {
      */
     plugins: [
         { src: '~/plugins/browser', mode: 'client' },
+        { src: '~/plugins/exposeStore', mode: 'client' },
         '~/plugins/global-components'
     ],
 
