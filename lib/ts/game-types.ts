@@ -31,7 +31,7 @@ declare interface GameConfiguration {
     name: string
     setup: (ctx: Ctx, setupData?: any) => GType
     phases: {
-        [key: string]: GamePhase
+        [key: string]: Phase
     }
     moves: {
         [key: string]: Move
@@ -50,8 +50,6 @@ declare interface GameConfiguration {
         }
     }
 }
-
-declare interface GamePhase {}
 
 declare interface GameSettings {}
 
@@ -79,6 +77,28 @@ declare type Move = (G: GType, ctx: Ctx, options?: any) => any
 declare interface MoveConfig {
     move: string
     args: any
+}
+
+declare interface Phase {
+    onBegin?: (G: GType, ctx: Ctx) => GType | void
+    onEnd?: (G: GType, ctx: Ctx) => GType | void
+    endIf?: (G: GType, ctx: Ctx) => boolean | void
+    moves?: { [key: string]: Move }
+    start?: boolean
+    next?: string
+    turn?: Turn
+}
+
+declare interface Turn {
+    order?: string
+    onBegin?: (G: GType, ctx: Ctx) => GType | void
+    onEnd?: (G: GType, ctx: Ctx) => GType | void
+    endIf?: (G: GType, ctx: Ctx) => boolean | void
+    onMove?: (G: GType, ctx: Ctx) => GType | void
+    moveLimit?: number
+    stages?: {
+        [key: string]: GameStage
+    }
 }
 
 declare interface Vector2 {
