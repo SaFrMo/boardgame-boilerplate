@@ -25,6 +25,7 @@ declare interface Ctx {
     activePlayers: Array<any>
     numMoves: number
     events: any
+    random: any
 }
 
 declare interface GameConfiguration {

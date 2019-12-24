@@ -1,5 +1,5 @@
 import { constants } from './constants'
-import { ai } from './ai/index'
+// import { ai } from './ai/index'
 
 const game: GameConfiguration = {
     name: 'game-name',
