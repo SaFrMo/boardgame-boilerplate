@@ -15,6 +15,11 @@ declare class BotClass {
     random: (arg?: Array<any> | number) => any
 }
 
+declare interface BotObjective {
+    checker: (G: GType, ctx: Ctx) => boolean
+    weight: number
+}
+
 declare interface Ctx {
     turn: number
     numPlayers: number
